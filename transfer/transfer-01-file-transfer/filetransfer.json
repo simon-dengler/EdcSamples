@@ -5,12 +5,12 @@
   "@type": "TransferRequestDto",
   "dataDestination": {
     "type": "File",
-    "path": "{path to destination file}",
+    "path": "/home/simon/eclipse-edc/filetransfer/folder2/new-file.txt",
     "keyName": "keyName"
   },
   "protocol": "dataspace-protocol-http",
   "assetId": "test-document",
-  "contractId": "{agreement ID}",
+  "contractId": "88fe5ef5-07f6-4c1b-a910-4b1cea5d4bb9",
   "connectorId": "provider",
   "connectorAddress": "http://localhost:8282/protocol",
   "privateProperties": {}

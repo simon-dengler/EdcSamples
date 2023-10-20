@@ -1,0 +1,19 @@
+{
+  "@type": "edc:ContractNegotiation",
+  "@id": "089a6725-2c98-48d1-8fcb-4a4ed85bf1e0",
+  "edc:type": "CONSUMER",
+  "edc:protocol": "dataspace-protocol-http",
+  "edc:state": "FINALIZED",
+  "edc:counterPartyId": "provider",
+  "edc:counterPartyAddress": "http://localhost:8282/protocol",
+  "edc:callbackAddresses": [],
+  "edc:createdAt": 1696516564235,
+  "edc:contractAgreementId": "88fe5ef5-07f6-4c1b-a910-4b1cea5d4bb9",
+  "@context": {
+    "dct": "https://purl.org/dc/terms/",
+    "edc": "https://w3id.org/edc/v0.0.1/ns/",
+    "dcat": "https://www.w3.org/ns/dcat/",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "dspace": "https://w3id.org/dspace/v0.8/"
+  }
+}
