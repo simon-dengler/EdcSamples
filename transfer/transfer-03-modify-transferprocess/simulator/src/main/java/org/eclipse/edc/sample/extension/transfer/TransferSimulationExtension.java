@@ -74,7 +74,7 @@ public class TransferSimulationExtension implements ServiceExtension {
                 .assetId("assetId")
                 .contractId("contractId")
                 .destinationType(TEST_TYPE)
-                .connectorAddress("http//localhost:9999")
+                .connectorAddress("http://localhost:9192")
                 .protocol("dataspace-protocol-http")
                 .build();
     }

@@ -10,7 +10,7 @@
   },
   "protocol": "dataspace-protocol-http",
   "assetId": "test-document",
-  "contractId": "88fe5ef5-07f6-4c1b-a910-4b1cea5d4bb9",
+  "contractId": "2ab168b0-8acd-4038-b857-0658166b7edc",
   "connectorId": "provider",
   "connectorAddress": "http://localhost:8282/protocol",
   "privateProperties": {}
