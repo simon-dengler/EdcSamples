@@ -1,3 +1,12 @@
 #!/bin/bash
-AUTH_CODE='eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2OTgzNDAwNjksImRhZCI6IntcInByb3BlcnRpZXNcIjp7XCJodHRwczovL3czaWQub3JnL2VkYy92MC4wLjEvbnMvcHJveHlQYXRoXCI6XCJ0cnVlXCIsXCJodHRwczovL3czaWQub3JnL2VkYy92MC4wLjEvbnMvdHlwZVwiOlwiSHR0cERhdGFcIixcImh0dHBzOi8vdzNpZC5vcmcvZWRjL3YwLjAuMS9ucy9uYW1lXCI6XCJUZXN0IGFzc2V0XCIsXCJodHRwczovL3czaWQub3JnL2VkYy92MC4wLjEvbnMv           YmFzZVVybFwiOlwiaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3VzZXJzXCJ9fSIsImNpZCI6ImJiZWNkNzFjLTlhNjEtNDVlYy05ZDc3LTlmZTgyODY0YTg0MyJ9.MIliVuL5SU3FqvP1Y_yEb_7IUYKKAvZSMEguFm7zkdzagIcA0F0DMa4TDu22IZ-rKzO6iCdhzcOzu_WNKrOeMuqmq7c           pcl65gRHho2m6TgimiGhcU1ctA1gZgzhLLeipDp6HLAkvJMJ_S6xvkN9bd4luA5i9Tz2Avlp7yp6_m70pIV56YAae0_tN6SScziOIL3g7FHCH0tUFCxG3aU96hzVj_qd11ki_e0lnkexGpMQzBxpcggxPUCHV5l-3wEA8lIlEFhB94o_tfnoo2LVUL9-Cb3BNIFMDgC5ehMUxkLsRxzLiHxXTP8MC0owfVQx9R2k7VV-ozsaASWvIsRbpIQ' #<--edit here
-curl --location --request GET 'http://localhost:29291/public/' --header "Authorization: $AUTH_CODE"
+if [ -z "$1" ]; then
+    read -e -s -p 'Auth code from logger or press enter for automatic grep from syslogs: ' AUTH_CODE
+else
+    AUTH_CODE=$1 #<-- edit here
+fi
+[ -z "$AUTH_CODE" ] && AUTH_CODE=$(grep "authCode" /var/log/syslog | tail -1 | sed -E 's~(.*\]: )(\{\"id\":\".*)~\2~gm;t' | jq -r ".authCode")
+[ -z "$AUTH_CODE" ] && echo "No auth code supplied" && exit 1
+
+set -x
+#echo -e $(curl --location --request GET 'http://localhost:29291/public/' --header "Authorization: $AUTH_CODE" -s)
+curl --location --request GET 'http://localhost:29291/public/' --header "Authorization: $AUTH_CODE" -s | jq

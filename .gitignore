@@ -53,3 +53,16 @@ launchers/demo-e2e/edc-config.properties
 .env
 runtime_settings.properties
 generated_backend.tf
+
+# ignore status files for provider connector
+scritps/transfer/06/ManyOfferIdAndAssetId
+scritps/transfer/06/agreementId
+scritps/transfer/06/assetIds
+scritps/transfer/06/assetPolicies
+scritps/transfer/06/catalog
+scritps/transfer/06/contractAgreementId
+scritps/transfer/06/offerIdAndAssetId
+scritps/transfer/06/oneOfferIdAndAssetId
+scritps/transfer/06/policyCopntracts
+scritps/transfer/06/transferProcessId
+

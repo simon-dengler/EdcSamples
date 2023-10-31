@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 curl -H 'Content-Type: application/json' \
      -d '{
            "@context": {
