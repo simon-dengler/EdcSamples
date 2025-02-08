@@ -28,6 +28,8 @@ dependencyResolutionManagement {
     }
 }
 
+include(":cus:cus-connector")
+
 include(":basic:basic-01-basic-connector")
 include(":basic:basic-02-health-endpoint")
 include(":basic:basic-03-configuration")
